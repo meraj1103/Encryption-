@@ -1,22 +1,116 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Encrypted Chat</title>
+  <title>Secure Encrypted Chat</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      padding: 30px;
+      width: 400px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 80px;
+      border-radius: 8px;
+      border: none;
+      padding: 10px;
+      margin-bottom: 10px;
+      resize: none;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 48%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .encrypt-btn {
+      background: #00c6ff;
+      color: white;
+    }
+
+    .encrypt-btn:hover {
+      background: #0072ff;
+    }
+
+    .decrypt-btn {
+      background: #f7971e;
+      color: white;
+    }
+
+    .decrypt-btn:hover {
+      background: #ff512f;
+    }
+
+    #output {
+      margin-top: 15px;
+      background: rgba(0,0,0,0.3);
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      max-height: 100px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+
+  </style>
 </head>
 <body>
 
-<h2>AES Encrypted Chat</h2>
+  <div class="container">
+    <h2>🔐 Secure Chat Encryption</h2>
 
-<textarea id="message" placeholder="Enter message"></textarea><br><br>
+    <textarea id="message" placeholder="Enter message or encrypted JSON"></textarea>
 
-<input type="password" id="password" placeholder="Enter secret key"><br><br>
+    <input type="password" id="password" placeholder="Enter Secret Key">
 
-<button onclick="encrypt()">Encrypt</button>
-<button onclick="decrypt()">Decrypt</button>
+    <div class="btn-group">
+      <button class="encrypt-btn" onclick="encrypt()">Encrypt</button>
+      <button class="decrypt-btn" onclick="decrypt()">Decrypt</button>
+    </div>
 
-<pre id="output"></pre>
+    <div id="output"></div>
+  </div>
 
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
