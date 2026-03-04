@@ -59,3 +59,14 @@ async function decrypt() {
   document.getElementById("output").textContent =
     new TextDecoder().decode(decrypted);
 }
+function copyOutput() {
+  const output = document.getElementById("output").textContent;
+  if (!output) {
+    alert("Nothing to copy!");
+    return;
+  }
+
+  navigator.clipboard.writeText(output)
+    .then(() => alert("Copied to clipboard ✅"))
+    .catch(err => alert("Failed to copy ❌", err));
+}
