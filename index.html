@@ -81,6 +81,17 @@
       background: #ff512f;
     }
 
+    .copy-btn {
+      background: #4caf50;
+      color: white;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .copy-btn:hover {
+      background: #388e3c;
+    }
+
     #output {
       margin-top: 15px;
       background: rgba(0,0,0,0.3);
@@ -107,6 +118,8 @@
       <button class="encrypt-btn" onclick="encrypt()">Encrypt</button>
       <button class="decrypt-btn" onclick="decrypt()">Decrypt</button>
     </div>
+
+    <button class="copy-btn" onclick="copyOutput()">Copy Encrypted Code</button>
 
     <div id="output"></div>
   </div>
